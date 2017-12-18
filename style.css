@@ -1,5 +1,5 @@
 .navbar{
-  background-color: rgb(69, 33, 108);
+  background-color: rgb(69, 38, 146);
   border-color: transparent;
   border-radius: 0px;
   margin-bottom: 0px;
@@ -16,38 +16,44 @@
   max-width: 200px;
 }
 #about{
-  background-color: #343895;
+  background-color: rgb(34, 38, 95);
   padding-top: 52px;
 }
-#about img{
-  max-width: 300px;
-}
-#section-two{
-  background-color: #02737f;
+#portfolio{
+  background-color: rgb(108, 95, 66);
 }
 #section-three{
-  background-color: #421852;
+  background-color: rgb(53, 36, 118);
+}
+#footer{
+  padding: 20px;
+  background-color: rgb(146, 102, 38);
+  color: #FFF;
 }
 .grl-section{
   color: #fff;
 }
 .section-title{
-  font-size: 160px;
   font-weight: bold;
-  letter-spacing: -7px;
-  color: #fff;
-  line-height: 1;
+  text-transform: uppercase;
 }
-.flexbox-middle{
-  display: flex;
-  align-items: center;
+.full-height{
   height: 100%;
+}
+.flexbox{
+  display: flex;
 }
 .flexbox-column{
   flex-direction: column;
 }
 .flexbox-justify-center{
   justify-content: center;
+}
+.flexbox-align-center{
+  align-items: center;
+}
+.flexbox-row-reverse{
+  flex-flow: row-reverse;
 }
 .navbar-fixed-top {
   position: fixed;
@@ -58,16 +64,67 @@
   padding-bottom: 10px;
 }
 .navbar-fixed-top.scrolled {
-  background-color: rgba(69, 33, 108, 0.8);
+  background-color: rgba(69, 33, 108, 1);
   transition: background-color 200ms linear;
 }
 .navbar-nav > li > a {
-    text-transform: uppercase;
-    font-weight: bold;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .round-img{
   border-radius: 50%;
 }
 .no-margin{
   margin: 0px;
+}
+.personal-img{
+  max-width: 300px;
+}
+.brief-description{
+  width: calc(100% - 300px);
+  padding-right: 15px;
+}
+.smaller-container{
+  width: 950px;
+}
+.divider{
+  height: 5px;
+  width: 100%;
+  background-color: #FFF;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.image-container{
+  overflow:hidden;
+  height: 400px;
+  width: 360px;
+}
+.ninety-porcent-width{
+  width: 90%;
+}
+.fifty-porcent-width{
+  width: 50%;
+}
+#carousel-portfolio{
+  margin-top: 20px;
+}
+#carousel-portfolio .item{
+  width: 33%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#carousel-portfolio .item.active{
+  display: inline-block;
+}
+#carousel-portfolio .carousel-control {
+  width: 20px;
+  background: none;
+}
+#carousel-portfolio .carousel-indicators {
+  /*position: initial;
+  margin: 0 auto;*/
+  bottom: 5px;
+}
+.carousel-inner .display-inline-block{
+  display: inline-block;
 }
