@@ -7,7 +7,9 @@ $( document ).ready(function() {
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
   });
   $(window).resize(function(){
-    set_width_height();
+	  if ($(window).outerHeight() != window_height) {
+		set_width_height();
+	  }
   });
   var left_carousel_control = false;
   $(".left.carousel-control").click(function(){
@@ -43,6 +45,6 @@ $( document ).ready(function() {
   function set_width_height() {
     window_height = $( window ).outerHeight();
     window_width = $( "body" ).outerWidth();
-    $(".grl-section").css("height", window_height);
+	$(".grl-section").css("height", window_height);
   }
 });
