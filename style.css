@@ -9,6 +9,10 @@
 .navbar-default .navbar-nav > li > a{
   color: #fff;
 }
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover{
+  color: #836262;
+}
 .navbar-brand{
   padding: 8px 15px;
 }
@@ -22,7 +26,8 @@
 #portfolio{
   background-color: rgb(108, 95, 66);
 }
-#section-three{
+#contact{
+  color: #FFF;
   background-color: rgb(53, 36, 118);
 }
 #footer{
@@ -34,6 +39,7 @@
   color: #fff;
 }
 .section-title{
+  margin-top: 30px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -44,7 +50,7 @@
   display: flex;
 }
 .flexbox-column{
-  flex-direction: column;
+  flex-flow: column;
 }
 .flexbox-justify-center{
   justify-content: center;
@@ -64,7 +70,7 @@
   padding-bottom: 10px;
 }
 .navbar-fixed-top.scrolled {
-  background-color: rgba(69, 33, 108, 1);
+  /*background-color: rgba(69, 33, 108, 1);*/
   transition: background-color 200ms linear;
 }
 .navbar-nav > li > a {
@@ -84,9 +90,6 @@
   width: calc(100% - 300px);
   padding-right: 15px;
 }
-.smaller-container{
-  width: 950px;
-}
 .divider{
   height: 5px;
   width: 100%;
@@ -96,8 +99,7 @@
 }
 .image-container{
   overflow:hidden;
-  height: 400px;
-  width: 360px;
+  max-height: 600px;
 }
 .ninety-porcent-width{
   width: 90%;
@@ -105,26 +107,162 @@
 .fifty-porcent-width{
   width: 50%;
 }
+.fourty-porcent-width{
+  width: 40%;
+}
 #carousel-portfolio{
   margin-top: 20px;
 }
 #carousel-portfolio .item{
-  width: 33%;
+  width: calc((100% / 3) - 15px);
   padding-left: 15px;
   padding-right: 15px;
-}
-#carousel-portfolio .item.active{
-  display: inline-block;
 }
 #carousel-portfolio .carousel-control {
   width: 20px;
   background: none;
 }
 #carousel-portfolio .carousel-indicators {
-  /*position: initial;
-  margin: 0 auto;*/
-  bottom: 5px;
+  position: initial;
+  margin: 0 auto;
+  margin-top: 10px;
 }
-.carousel-inner .display-inline-block{
+#carousel-portfolio .carousel-inner .active,
+#carousel-portfolio .active + .item,
+#carousel-portfolio .active + .item + .item{
   display: inline-block;
+}
+#Contact .icons-container{
+  margin-top: 50px;
+}
+#contact .icons-container a{
+  border-radius: 50%;
+  border: solid #fff 4px;
+  width: 120px;
+  height: 120px;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+}
+#contact .icons-container a:hover,
+#contact .icons-container a:focus{
+  border-color: #836262;
+  color: #836262;
+}
+.smaller-container{
+  width: 950px ;
+}
+#carousel-portfolio .carousel-indicators li:last-child,
+#carousel-portfolio .carousel-indicators li:nth-last-child(2){
+  display: none;
+}
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px){
+  .smaller-container{
+    width: 750px;
+  }
+  #carousel-portfolio .item{
+    width: calc((100% / 2) - 15px);
+  }
+  #carousel-portfolio .active + .item + .item{
+    display: none;
+  }
+  #carousel-portfolio .carousel-indicators li:nth-last-child(2){
+    display: inline-block;
+  }
+  .brief-description{
+    text-align: center;
+  }
+}
+@media (max-width: 767px){
+  .navbar-fixed-top {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  #right-navbar-collapse{
+    text-align: center;
+  }
+  .smaller-container{
+    width: auto;
+  }
+  #about {
+    padding-top: 20px;
+}
+  #about .flexbox{
+    flex-flow: column;
+    justify-content: center;
+  }
+  .brief-description{
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 0px;
+  }
+  .divider{
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+  .personal-img {
+    max-width: 200px;
+  }
+  .section-title{
+    font-size: 26px;
+  }
+  .divider{
+    height: 3px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  h3{
+    font-size: 18px;
+  }
+  .h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  #contact .icons-container a {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 620px) {
+  .navbar {
+    min-height: auto;
+  }
+  .navbar-brand {
+    padding: 7px 7px;
+    height: auto;
+  }
+  .navbar-toggle {
+    padding: 7px 8px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+  .navbar-brand img {
+    max-width: 150px;
+  }
+  #carousel-portfolio .item{
+    width: calc(100% - 15px);
+  }
+  #carousel-portfolio .active + .item{
+    display: none;
+  }
+  .personal-img {
+    max-width: 180px;
+  }
+  .section-title{
+    font-size: 26px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  h3{
+    font-size: 18px;
+  }
+  #carousel-portfolio .carousel-indicators li:last-child{
+    display: inline-block;
+  }
 }
