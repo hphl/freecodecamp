@@ -41,8 +41,8 @@ $( document ).ready(function() {
     }
   });
   function set_width_height() {
-    window_height = $( window ).height();
-    window_width = $( "body" ).width();
+    window_height = $( window ).outerHeight();
+    window_width = $( "body" ).outerWidth();
     $(".grl-section").css("height", window_height);
   }
 });

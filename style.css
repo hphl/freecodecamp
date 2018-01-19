@@ -224,8 +224,11 @@
     margin-bottom: 5px;
   }
   #contact .icons-container a {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+  }
+  .fa-5x {
+    font-size: 4em;
   }
 }
 @media (max-width: 620px) {
@@ -265,4 +268,16 @@
   #carousel-portfolio .carousel-indicators li:last-child{
     display: inline-block;
   }
+}
+@media (max-width: 620px) {
+	#about{
+		padding-top: 25px;
+	}
+	.grl-section{
+		padding-bottom: 10px;
+		height: auto !important;
+	}
+	.full-height{
+		height: auto;
+	}
 }
