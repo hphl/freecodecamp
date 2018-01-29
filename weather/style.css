@@ -5,36 +5,37 @@ html {
 }
 body{
   margin-bottom: 50px;
+  background-color: #161616;
 }
-#quote-box .btn{
+#weather-box,
+#footer{
   color: #fff;
 }
 a:hover,
 a:focus,
-#quote-box a.fa:hover,
-#quote-box a.fa:focus,
 .btn:focus,
 .btn:hover{
   color: #efefef;
   opacity: 0.8;
 }
-#quote-box,
-#footer,
-#quote-box .quote-text .fa{
-  background-color: #fff;
-}
-#quote-box{
-  max-width: 500px;
+#weather-box{
+  background-color: #161616;
   margin: auto;
 }
-.share-quote .fa-1x{
-  font-size: 1.5em;
+.weather-measure{
+  font-size: inherit;
+  padding: 0px;
+  vertical-align: inherit;
+  color: #0002b0;
 }
 #footer{
   height: 50px;
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+.block-inline{
+  display: inline-block;
 }
 .full-height{
   height: 100%;

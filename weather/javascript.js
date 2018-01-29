@@ -1,18 +1,24 @@
 $( document ).ready(function() {
-  getQuote();
-  $('#quote-btn').click(function(){
-    getQuote();
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(getWeather);
+  } else {
+      console.log("Something went wrong.") ;
+  }
+  $('.weather-measure').click(function(){
+    if($(this).text() === "C"){
+      $(this).text("F");
+      $(".weather-value").text($(this).attr('data-fahrenheit'));
+    }else{
+      $(this).text("C");
+      $(".weather-value").text($(this).attr('data-celsius'));
+    }
   });
 });
 
-function getQuote(){
+function getWeather(position){
   $.ajax({
-     url: 'https://andruxnet-random-famous-quotes.p.mashape.com',
+     url: 'https://fcc-weather-api.glitch.me/api/current?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,
      method: "GET",
-     headers: {
-       'X-Mashape-Key': 'qYBcEJRuZdmshCMKrSkYS0hkCBI4p1ewuqyjsnz9sGqKM64Pmg',
-       'Accept': 'application/json',
-     },
      data: {
         format: 'json'
      },
@@ -22,52 +28,22 @@ function getQuote(){
      },
      success: function(data, textStatus, request) {
         //console.log(data);
-        SetData(data);
+        showWeather(data);
      }
   });
 }
-function oldgetQuote(){
-  var url = 'https://andruxnet-random-famous-quotes.p.mashape.com';
-  fetch(url,{
-      method: 'GET',
-      headers: {
-          'Accept': 'application/json',
-          'X-Mashape-Key': 'qYBcEJRuZdmshCMKrSkYS0hkCBI4p1ewuqyjsnz9sGqKM64Pmg',
-      }
-  })
-  .then(function(response) {
-    //console.log(response);
-    return response.json();
-  }) // Transform the data into json
-  .then(function(data) {
-    SetData(data);
-  })
-  .catch(function(error) {
-    // If there is any error you will catch them here
-    console.log(error);
-  });
-}
-function changeColor(){
-  var colors = ['#16A085','#27AE60','#2C3E50','#F39C12','#E74C3C','#9B59B6','#FB6964','#342224','#472E32','#BDBB99','#77B1A9','#73A857'];
-  var new_color = Math.floor(Math.random() * colors.length);
-  $('body').animate({
-            color: colors[new_color],
-            backgroundColor: colors[new_color]
-  }, 600);
-  $('#quote-box .btn').animate({
-            backgroundColor: colors[new_color]
-  }, 600);
-}
-function SetData(data) {
+
+function showWeather(data) {
   //console.log(data);
-  changeColor();
   // Here you get the data to modify as you please
-  var quote = (data),
-      quote_text = quote.quote, //  Create the elements we need
-      author = quote.author,
-      category = quote.category;
+  var weather_location = data.name + ',' + data.sys.country,
+      celsius_value = data.main.temp,
+      fahrenheit_value = Math.round((parseInt(celsius_value) * 1.8) + 32),
+      weather_icon = data.weather[0].icon;
       //
-      $('#quote-box .quote-text span').text(quote_text);
-      $('#quote-box .quote-author').text('- ' + author);
-      $('.twitter-share-button').attr("href", 'https://twitter.com/intent/tweet?text="' + quote_text + '" -' +author);
+      $('#weather-box .weather-location').text(weather_location);
+      $('.weather-measure').attr('data-fahrenheit',fahrenheit_value);
+      $('.weather-measure').attr('data-celsius',celsius_value);
+      $('#weather-box .weather-value').text(celsius_value);
+      $('#weather-box .weather-icon').attr("src", weather_icon);
 }
