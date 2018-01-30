@@ -16,6 +16,7 @@ a:focus,
   background-color: #fff;
   margin: auto;
   padding-bottom: 20px;
+  max-width: 605px;
 }
 .wrapper-total-reults{
   color: #808080;
