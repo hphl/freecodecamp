@@ -19,8 +19,26 @@ $( document ).ready(function() {
   $('body').on('click', '.more-results', function(){
     searchWiki($(this).attr('data-link'));
   });
+  /*$('.input-search').autocomplete({
+    source: function(request, response) {
+        $.ajax({
+            url: "http://en.wikipedia.org/w/api.php",
+            dataType: "jsonp",
+            data: {
+                'action': "opensearch",
+                'format': "json",
+                'search': request.term,
+                origin: "*"
+            },
+            success: function(data) {
+              console.log(data[1]);
+                response(data[1]);
+                console.log(response);
+            }
+        });
+    }
+  });*/
 });
-
 function searchWiki(continue_sroffset){
   if(typeof continue_sroffset === 'undefined'){
     $('#results-box').empty();
