@@ -5,6 +5,7 @@ html {
 }
 body{
   margin-bottom: 50px;
+  background-color: #161616;
 }
 a:hover,
 a:focus,
@@ -13,12 +14,40 @@ a:focus,
 
 }
 #twitch-box{
-  background-color: #fff;
+  background-color: transparent;
   margin: auto;
   padding-bottom: 20px;
-  max-width: 605px;
+  max-width: 850px;
+}
+.available-status{
+  padding: 10px 0px;
+}
+.text{
+  margin: 0px 3px;
+  font-weight: bold;
+  font-size: 13px;
+  float: right;
+}
+.status{
+  width: 20px;
+  cursor: pointer;
+  transition: width 0.4s linear;
+  float: right;
+  clear: right;
+  padding: 1px 3px;
+  margin-bottom: 1px;
+  background-color:#b0acac;
+  border-radius: 4px 0px 0px 4px;
+  height: 20px;
+  overflow: hidden;
+}
+.active,
+.status:hover{
+  width: 70px;
+  transition: width 0.4s linear;
 }
 #footer{
+  color: #fff;
   height: 50px;
   position: absolute;
   width: 100%;
