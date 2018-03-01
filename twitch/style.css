@@ -7,17 +7,65 @@ body{
   margin-bottom: 50px;
   background-color: #161616;
 }
+a{
+  color: #162763;
+}
 a:hover,
 a:focus,
 .btn:focus,
 .btn:hover{
-
+  color: #0d33ba;
+  text-decoration: none;
 }
 #twitch-box{
   background-color: transparent;
   margin: auto;
   padding-bottom: 20px;
-  max-width: 850px;
+  max-width: 725px;
+}
+#twitch-box #twitch-box-head,
+#twitch-box .online,
+#twitch-box .offline{
+  padding: 2px 0px;
+  border-bottom: solid 3px #c3bdbd;
+}
+#twitch-box .online [class^="col-"],
+#twitch-box .offline [class^="col-"]{
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+.online{
+  background-color: #63c265;
+}
+.offline{
+  background-color: #c84c4a;
+}
+#twitch-box #twitch-box-head{
+  padding: 15px;
+  background-color: #fff;
+}
+#twitch-box-head .title{
+  margin: 0px;
+  width: calc(100% - 75px);
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+#twitch-box-head .menu{
+  vertical-align: bottom;
+}
+#twitch-box img{
+  border-radius: 50%;
+  border: solid 3px #c3bdbd;
+  background-color: #efefef;
+}
+#twitch-box p{
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+#twitch-box h4{
+  margin: 0px;
 }
 .available-status{
   padding: 10px 0px;
@@ -44,7 +92,7 @@ a:focus,
 .active,
 .status:hover{
   width: 70px;
-  transition: width 0.4s linear;
+  transition: width 0.1s linear;
 }
 #footer{
   color: #fff;
@@ -53,27 +101,13 @@ a:focus,
   width: 100%;
   bottom: 0;
 }
+.bold-txt{
+  font-weight: bold;
+}
 .block-inline{
   display: inline-block;
 }
-.full-height{
-  height: 100%;
-}
-.flexbox{
-  display: flex;
-}
-.flexbox-column{
-  flex-flow: column;
-}
-.flexbox-justify-center{
-  justify-content: center;
-}
-.flexbox-align-center{
-  align-items: center;
-}
-.flexbox-row-reverse{
-  flex-flow: row-reverse;
-}
+
 @media (max-width: 1199px) {
 
 }
@@ -81,16 +115,27 @@ a:focus,
 
 }
 @media (max-width: 767px){
-
+  h4{
+    font-size: 16px;
+  }
+  #twitch-box p {
+    font-size: 14px;
+  }
 }
 @media (max-width: 620px) {
+  #twitch-box-head .menu {
+    vertical-align: top;
+  }
+  #twitch-box .logo{
+    width: 95px;
+  }
+  #twitch-box .channelContent{
+    width: calc(100% - 95px);
+  }
   h2{
     font-size: 24px;
   }
   h3{
     font-size: 18px;
   }
-}
-@media (max-width: 620px) {
-
 }

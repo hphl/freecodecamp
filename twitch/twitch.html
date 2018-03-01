@@ -22,54 +22,31 @@
   </header>
   <main>
     <div class="container">
-      <div class="twitch-wrapper flexbox full-height">
         <div id="twitch-box" class="jumbotron center-block">
-          <ul id="channels"  class="list-group">
-            <li class="list-group-item">
-              <div class="media">
-                <div class="media-body">
-                  <h1>Twitch Streamers</h1>
+          <div id="twitch-box-head" class="row">
+              <h1 class="block-inline title">Twitch Streamers</h1>
+              <div class="block-inline menu">
+                <div class="active text-primary status" status="all">
+                  <i class="fa fa-circle" aria-hidden="true"></i>
+                  <span class="text">All</span>
                 </div>
-                <div class="media-right media-bottom available-status">
-                    <div class="active status-all text-primary status">
-                      <i class="fa fa-circle" aria-hidden="true"></i>
-                      <span class="text">All</span>
-                    </div>
-                    <div class="status-online text-success status">
-                      <i class="fa fa-circle" aria-hidden="true"></i>
-                      <span class="text">Online</span>
-                    </div>
-                    <div class="status-offline text-danger status">
-                      <i class="fa fa-circle" aria-hidden="true"></i>
-                      <span class="text">Offline</span>
-                    </div>
+                <div class="text-success status" status="online">
+                  <i class="fa fa-circle" aria-hidden="true"></i>
+                  <span class="text">Online</span>
+                </div>
+                <div class="text-danger status" status="offline">
+                  <i class="fa fa-circle" aria-hidden="true"></i>
+                  <span class="text">Offline</span>
                 </div>
               </div>
-            </li>
-            <li class="list-group-item">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h4 class="media-heading">Media heading</h4>
-                  <span>description.</span>
-                </div>
-              </div>
-            </li>
-          </ul>
+          </div>
         </div>
-      </div>
     </div>
   </main>
   <footer id="footer">
-    <div class="flexbox flexbox-align-center flexbox-justify-center full-height">
-      <span class="text-center">
+      <span class="text-center center-block">
         <i class="glyphicon glyphicon-copyright-mark"></i>Copyright 2018, Hans Hamel. All Rights Reserved.
       </span>
-    </div>
   </footer>
 </body>
 </html>
