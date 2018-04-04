@@ -118,6 +118,9 @@ a:focus,
   h4{
     font-size: 16px;
   }
+  #twitch-box{
+    max-width: 635px;
+  }
   #twitch-box p {
     font-size: 14px;
   }
