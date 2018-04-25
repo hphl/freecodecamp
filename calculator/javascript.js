@@ -219,8 +219,11 @@
                     else {
                         if (_lastItem.length === 1)
                             _lastItem = _memory.strLastItem();
-                        else
+                        else {
                             _lastItem = _lastItem.substring(0, _lastItem.length - 1);
+                            if (_lastItem === '-')
+                                _lastItem = '0';
+                        }
                     }
                     return _lastItem;
                 case ".":
