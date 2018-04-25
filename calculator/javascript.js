@@ -1,37 +1,48 @@
 (function () {
+    function ResultOperation(lastOperation) {
+        var _parentOperation = null;
+        var _lastOperation = lastOperation;
+        this.mergeOperation = function (curr) {
+            if (curr.checkPriority() > _lastOperation.checkPriority()) {
+                _lastOperation.addItem(curr);
+                if (_parentOperation === null)
+                    _parentOperation = _lastOperation;
+                else {
+                    _parentOperation.removeSecondNumber();
+                    _parentOperation.addItem(_lastOperation);
+                }
+            } else {
+                _lastOperation.addItem(curr.removeFirstNumber());
+                curr.addItem(_lastOperation);
+                if (_parentOperation !== null) {
+                    _parentOperation.removeSecondNumber();
+                    if (curr.checkPriority() <= _parentOperation.checkPriority()) {
+                        _parentOperation.addItem(curr.removeFirstNumber());
+                        curr.addItem(_parentOperation);
+                        _parentOperation = null;
+                    } else
+                        _parentOperation.addItem(curr);
+                }
+            }
+            _lastOperation = curr;
+        }
+        this.getResult = function () {
+            if (_parentOperation === null)
+                return _lastOperation.DoOperation();
+            return _parentOperation.DoOperation();
+        }
+    }
     function MemoryManager() {
         var _elements = [];
         this.calculateResult = function () {
             if (_elements.length === 1)
                 return _elements[0].DoOperation();
-            var parentOperation = null;
-            var resultOperation = _elements.reduce(function (prev, curr) {
-                if (curr.checkPriority() > prev.checkPriority()) {
-                    prev.addItem(curr);
-                    if (parentOperation === null)
-                        parentOperation = prev;
-                    else {
-                        parentOperation.removeSecondNumber();
-                        parentOperation.addItem(prev);
-                    }
-                } else {
-                    prev.addItem(curr.removeFirstNumber());
-                    curr.addItem(prev);
-                    if (parentOperation !== null) {
-                        parentOperation.removeSecondNumber();
-                        if (curr.checkPriority() <= parentOperation.checkPriority()) {
-                            parentOperation.addItem(curr.removeFirstNumber());
-                            curr.addItem(parentOperation);
-                            parentOperation = null;
-                        } else
-                            parentOperation.addItem(curr);
-                    }
-                }
-                return curr;
-            });
-            if (parentOperation === null)
-                return resultOperation.DoOperation();
-            return parentOperation.DoOperation();
+            var resultOperation = new ResultOperation(_elements.shift());
+            resultOperation = _elements.reduce(function (prev, curr) {
+                prev.mergeOperation(curr);
+                return prev;
+            }, resultOperation);
+            return resultOperation.getResult();
         }
         this.reset = function () {
             _elements = [];
@@ -39,8 +50,10 @@
         this.hasOperations = function () {
             return (_elements.length > 0);
         }
-        this.getLastItem = function () {
-            return _elements[_elements.length - 1];
+        this.strLastItem = function () {
+            if (_elements.length === 0)
+                return '0';
+            return _elements[_elements.length - 1].getSymbol();
         }
         this.removeLastItem = function () {
             if (_elements.length > 0)
@@ -149,6 +162,8 @@
                 _numberOne = _numberOne.DoOperation();
             if (isNaN(_numberTwo))
                 _numberTwo = _numberTwo.DoOperation();
+            if (_numberTwo === null)
+                _numberTwo = '1';
             return Number(_numberOne) / Number(_numberTwo);
         }
     }
@@ -164,6 +179,8 @@
                 _numberOne = _numberOne.DoOperation();
             if (isNaN(_numberTwo))
                 _numberTwo = _numberTwo.DoOperation();
+            if (_numberTwo === null)
+                _numberTwo = '1';
             return Number(_numberOne) * Number(_numberTwo);
         }
     }
@@ -201,7 +218,7 @@
                         _lastItem = _memory.removeLastItem();
                     else {
                         if (_lastItem.length === 1)
-                            _lastItem = _memory.getLastItem().getSymbol();
+                            _lastItem = _memory.strLastItem();
                         else
                             _lastItem = _lastItem.substring(0, _lastItem.length - 1);
                     }
@@ -215,7 +232,7 @@
                         return _lastItem;
                     if (!isNaN(_lastItem))
                         _memory.addItem(_lastItem);
-                    _lastItem = roundNumber(_memory.calculateResult());
+                    _lastItem = roundNumber(_memory.calculateResult()).toString();
                     _memory.reset();
                     return _lastItem;
                 default:
@@ -229,6 +246,8 @@
             }
         }
         this.introduceItem = function (item) {
+            if (_lastItem === '/' && item === '0')
+                return _lastItem;
             if (isNaN(parseInt(item)))
                 return selectBasicOperation(item);
             if (_lastItem.length > _precision - 1 || _lastItem === '0' || isNaN(_lastItem))
