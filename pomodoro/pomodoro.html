@@ -32,10 +32,12 @@
         </div>
         <div id="clock">
           <p class="type-time">Session</p>
-          <button id="btn-start" class="fas fa-play"></button>
-          <button id="btn-pause" class="fas fa-pause"></button>
-          <button id="btn-stop" class="fas fa-stop"></button>
+          <p class="state">paused</p>
+          <button id="btn-play" data-state="playing"><i class="btn fas fa-play"></i></button>
+          <button id="btn-pause" data-state="paused"><i class="btn fas fa-pause"></i></button>
+          <button id="btn-stop" data-state="stopped"><i class="btn fas fa-stop"></i></button>
           <div class="timer">25:00</div>
+          <div class="background-clock"></div>
         </div>
       </div>
     </div>
