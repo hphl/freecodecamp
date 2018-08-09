@@ -13,13 +13,88 @@
 
   </header>
   <main>
+    <h1 id="title" class="center-text">Survey Form</h1>
+    <div class="content center-text">
+      <p id="description">Let us know how we can improve freeCodeCamp</p>
+      <form id="survey-form">
+        <label id="name-label" class="right-text">*Name:</label>
+        <input id="name" type="text" placeholder="Enter Your Name" required name="name">
+        <label id="email-label" class="right-text">*Email:</label>
+        <input id="email" type="email" placeholder="Enter Your Email" required name="email">
+        <label id="number-label" class="right-text">*Age:</label>
+        <input id="number" type="number" placeholder="Enter Your Age" required name="age" min="1" max="120">
+        <label class="right-text">Which option best describes your current role?</label>
+        <select id="dropdown">
+          <option disabled value>Select an Option</option>
+          <option value="student">Student</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="job">Full Time Job</option>
+          <option value="other">Other</option>
+        </select>
+        <label class="right-text">* How likely is that you would recommend freeCodeCamp to a friend?</label>
+        <ul class="unstyled-list left-text">
+          <li>
+            <input type="radio" name="recommend" value="definitely" required>Definitely
+          </li>
+          <li>
+            <input type="radio" name="recommend" value="maybe">Maybe
+          </li>
+          <li>
+            <input type="radio" name="recommend" value="not">Not Sure
+          </li>
+        </ul>
+        <label class="right-text">
+          Things that should be improved in the future (Check all that apply):
+        </label>
+        <ul class="unstyled-list left-text">
+          <li>
+            <input type="checkbox" value="frontend" name="improve">Front-end Projects
+          </li>
+          <li>
+            <input type="checkbox" value="backend" name="improve">Back-end Projects
+          </li>
+          <li>
+            <input type="checkbox" value="visualization" name="improve">Data Visualization
+          </li>
+          <li>
+            <input type="checkbox" value="challenges" name="improve">Challenges
+          </li>
+          <li>
+            <input type="checkbox" value="community" name="improve">Open Source Community
+          </li>
+          <li>
+            <input type="checkbox" value="help" name="improve">Gitter help rooms
+          </li>
+          <li>
+            <input type="checkbox" value="videos" name="improve">Videos
+          </li>
+          <li>
+            <input type="checkbox" value="meetups" name="improve">City Meetups
+          </li>
+          <li>
+            <input type="checkbox" value="wiki" name="improve">Wiki
+          </li>
+          <li>
+            <input type="checkbox" value="forum" name="improve">Forum
+          </li>
+          <li>
+            <input type="checkbox" value="courses" name="improve">Additional Courses
+          </li>
+        </ul>
+        <label class="right-text">Any Comments or Suggestions?</label>
+        <textarea name="comment" placeholder="Enter Your Comment...">
 
+        </textarea>
+        <div class="submit-wrapper">
+          <button id="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   </main>
   <footer id="footer">
-    <div class="text-center">
-      <h5>
-        <i class="glyphicon glyphicon-copyright-mark"></i>Copyright 2018, Hans Hamel. All Rights Reserved.</h5>
-    </div>
+      <h5 class="center-text">
+        <i class="glyphicon glyphicon-copyright-mark"></i>Copyright 2018, Hans Hamel. All Rights Reserved.
+      </h5>
   </footer>
 </body>
 <script src="javascript.js"></script>
