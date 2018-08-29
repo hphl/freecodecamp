@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Product Landing Page</title>
@@ -11,17 +12,20 @@
 <body>
   <header id="header">
     <div class="container">
-      <img id="header-img" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/product/images/original_trombones.png"></img>
+      <a class="logo-link float-left" href="#">
+        <img id="header-img" class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/product/images/quick_experience_logo.jpg"></img>
+        <span>Quick Experience</span>
+      </a>
       <nav id="nav-bar">
-        <ul>
+        <ul class="float-right">
           <li>
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#sign-up">Contact</a>
           </li>
           <li>
-            <a class="nav-link" href="#">How It Works</a>
+            <a class="nav-link" href="#features">Features</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#how-it-works">How It Works</a>
           </li>
         </ul>
       </nav>
@@ -29,15 +33,69 @@
   </header>
   <main>
     <div class="container">
-      <div>
-
-      </div>
-      <div>
-
-      </div>
-      <div>
-
-      </div>
+      <section id="sign-up">
+        <h2>Your portal for online shopping</h2>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <input id="email" type="email" name="email" placeholder="Enter Your Email">
+          <input id="submit" type="submit" value="Get Started">
+        </form>
+      </section>
+      <section id="features">
+        
+          <div class="grid">
+            <div class="icon">
+              <i class="fa fa-3x fa-fire"></i>
+            </div>
+            <div class="description">
+              <h2>Premium Materials</h2>
+              <p>Our products are original and new brand.</p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="icon">
+              <i class="fa fa-3x fa-truck"></i>
+            </div>
+            <div class="description">
+              <h2>Fast Shipping</h2>
+              <p>We make sure you receive your products as soon as we can. Also we provide free shipping to any place.</p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="icon">
+              <i class="fa fa-3x fa-battery-full"></i>
+            </div>
+            <div class="description">
+              <h2>Quality Assurance</h2>
+              <p>For every purchase you make, we will ensure there are no damages or faults.</p>
+            </div>
+          </div>
+        
+        <div class="responsive-video">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/qZjQspe8Js0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section id="how-it-works">
+        <div>
+          <h3>1</h3>
+          <h4>Contact</h4>
+          <p><a href="#contact">Sign up</a>. Choose a product and send us the link via email.</p>
+        </div>
+        <div>
+          <h3>2</h3>
+          <h4>Information</h4>
+          <p>We bring all information about the product and all payment methods.</p>
+        </div>
+        <div>
+          <h3>3</h3>
+          <h4>Payment</h4>
+          <p>You can payment with cash (CBBA), debit card, credit card, or bank deposit.</p>
+        </div>
+        <div>
+          <h3>4</h3>
+          <h4>Delivery</h4>
+          <p>Tell us where (house or work) and what time to deliver the product.</p>
+        </div>
+      </section>
     </div>
   </main>
   <footer id="footer">
