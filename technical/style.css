@@ -52,12 +52,6 @@ body {
   color: #4183c4;
 }
 
-#footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-
 .note{
   color: #4c7226;
   border: 1px solid #819c67;
@@ -66,8 +60,17 @@ body {
   padding: 0px 15px;
 }
 
-.note p{
+.note p,
+.tip p{
   font-size: 14px;
+}
+
+.tip{
+  color: #264c72;
+  border: 1px solid #97c1da;
+  background-color: #d8ebf8;
+  border-radius: 4px;
+  padding: 0px 15px;
 }
 
 .center-text {
@@ -105,13 +108,13 @@ header{
   padding: 0px;
 }
 
-#main-doc ol li { 
+#main-doc ol > li { 
   position: relative;
   padding: 5px 0px 5px 55px;
   margin-bottom: 5px;
 }
 
-#main-doc ol li:before { 
+#main-doc ol > li:before { 
   content: counter(li); 
   counter-increment: li;
   font-size: 24px;
@@ -127,14 +130,40 @@ header{
   text-align: right;
 } 
 
-#main-doc ol li p:first-child,
-#main-doc ul li p:first-child {
+#main-doc ol > li::after{
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+}
+
+#main-doc ol > li > p:first-child,
+#main-doc ul > li > p:first-child {
   margin-top: 0;
 }
 
+#main-doc ol > li img{
+  max-width: 100px;
+  border: 1px solid #ddd;
+  margin-left: 10px;
+  float: right;
+  cursor: pointer;
+  padding: 1px;
+}
+
 #main-doc ul{
-  padding: 10px;
+  padding-left: 10px;
   list-style: none;
+}
+
+#main-doc ul > li {
+  background-image: url("https://raw.githubusercontent.com/hphl/freecodecamp/master/technical/images/li-chevron.png");
+  background-repeat: no-repeat;
+  padding-left: 10px;
+  background-position-x: 0px;
+  background-position-y: 5px;
+  margin: 7px 0px;
 }
 
 #main-doc code,
@@ -154,26 +183,99 @@ header{
   line-height: 21px;
 }
 
+#main-doc pre:hover{
+  background-color: #635c5c;
+}
+
 #main-doc pre span{
   display: block;
+  white-space: normal;
 }
 
 .command{
   color: #FFF;
 }
 
+.command em,
+.output em{
+  color: #F9FE64;
+}
+
 .comment{
   color: #ccc;
 }
 
-@media screen and (max-width: 1110px){
-  
+.output{
+  color: #63E463;
 }
 
-@media screen and (max-width: 550px) {
-  
+#main-doc .bash{
+  background-color: transparent;
+  white-space: pre;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
-@media screen and (max-width: 360px){
+#main-doc .bash code{
+  border: none;
+  padding: 0px;
+}
 
+@media screen and (max-width: 1015px) {
+  #main-doc .bash,
+  #main-doc pre{
+    overflow-x: scroll;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  #navbar{
+    position: relative;
+    max-width: 100%;
+    border-bottom: rgba(0,22,22,0.4) solid 3px;
+    border-right: none;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #navbar ul {
+    height: 170px;
+    margin: 0px;
+  }
+
+  #navbar li{
+    padding: 8px 6px;
+  }
+
+  #main-doc {
+    margin-left: 0px;
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  body{
+    font-size: 14px;
+  }
+  
+  header{
+    font-size: 24px;
+  }
+
+  #main-doc ol > li::before {
+    font-size: 22px;
+    padding-right: 7px;
+    width: 24px;
+  }
+
+  #main-doc ol > li {
+    padding-right: 50px;
+  }
+}
+
+@media screen and (max-width: 373px){
+  #navbar ul {
+    height: 188px;
+  }
 }

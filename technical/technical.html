@@ -19,6 +19,7 @@
       <a class="nav-link" href="#adding_a_new_ssh_key_to_your_github_account"><li>Adding a new SSH key to your GitHub account</li></a>
       <a class="nav-link" href="#testing_your_ssh_connection"><li>Testing your SSH connection</li></a>
       <a class="nav-link" href="#working_with_ssh_key_passphrases"><li>Working with SSH key passphrases</li></a>
+      <a class="nav-link" href="#reference"><li>Reference</li></a>
     </ul>
   </nav>
   <main id="main-doc">
@@ -115,7 +116,7 @@
           <div class="tip">
             <p>
               <strong>Tip:</strong> If you receive an error that ~/.ssh doesn't exist, don't worry! We'll create it when
-              we <a href="#">generate a new SSH key</a>.
+              we <a href="#generating_a_new_ssh_key_and_adding_it_to_the_ssh-agent">generate a new SSH key</a>.
             </p>
           </div>
         </article>
@@ -128,14 +129,16 @@
             ssh-agent.
           </p>
           <p>
-            If you don't already have an SSH key, you must <a href="#">generate a new SSH key</a>. If you're unsure whether
-            you already have an SSH key, check for <a href="#">existing keys</a>.
+            If you don't already have an SSH key, you must <a href="#generating_a_new_sssh_key">generate a new SSH key</a>.
+            If you're unsure whether you already have an SSH key, check for <a href="#checking_for_existing_ssh_keys">existing
+              keys
+            </a>.
           </p>
           <p>
-            If you don't want to reenter your passphrase every time you use your SSH key, you can <a href="#">add your key
-              to the SSH agent</a>, which manages your SSH keys and remembers your passphrase.
+            If you don't want to reenter your passphrase every time you use your SSH key, you can <a href="#adding_your_ssh_key_to_the_ssh-agent">add
+              your key to the SSH agent</a>, which manages your SSH keys and remembers your passphrase.
           </p>
-          <h3>Generating a new SSH key</h3>
+          <h3 id="generating_a_new_sssh_key">Generating a new SSH key</h3>
           <ol>
             <li>
               <p>Open Git Bash.</p>
@@ -143,32 +146,37 @@
             <li>
               <p>Paste the text below, substituting in your GitHub email address.</p>
               <pre>
-              <span>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</span>
-            </pre>
+                <span class="command">$ ssh-keygen -t rsa -b 4096 -C "<em>your_email@example.com</em>"</span>
+              </pre>
               <p>This creates a new ssh key, using the provided email as a label.</p>
+              <pre>
+                <span class="output">Generating public/private rsa key pair.</span>
+              </pre>
             </li>
             <li>
               <p>When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file
                 location.
               </p>
               <pre>
-              <span>Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]</span>
-            </pre>
+                <span class="output">Enter a file in which to save the key (/c/Users/<em>you</em>/.ssh/id_rsa):<em>[Press enter]</em></span>
+              </pre>
             </li>
             <li>
-              <p>At the prompt, type a secure passphrase. For more information, see <a href="#">"Working with SSH key passphrases"</a>.</p>
+              <p>At the prompt, type a secure passphrase. For more information, see <a href="#working_with_ssh_key_passphrases">"Working
+                  with SSH key passphrases"</a>.</p>
               <pre>
-            <span>Enter passphrase (empty for no passphrase): [Type a passphrase]
-                Enter same passphrase again: [Type passphrase again]</span>
-          </pre>
+                <span class="output">Enter passphrase (empty for no passphrase): <em>[Type a passphrase]</em>
+                Enter same passphrase again: <em>[Type passphrase again]</em></span>
+              </pre>
             </li>
           </ol>
-          <h3>Adding your SSH key to the ssh-agent</h3>
-          <p>Before adding a new SSH key to the ssh-agent to manage your keys, you should have <a href="#">checked for existing
-              SSH keys</a> and <a href="#">generated a new SSH key</a>.</p>
+          <h3 id="adding_your_ssh_key_to_the_ssh-agent">Adding your SSH key to the ssh-agent</h3>
+          <p>Before adding a new SSH key to the ssh-agent to manage your keys, you should have <a href="#checking_for_existing_ssh_keys">checked
+              for existing SSH keys</a> and <a href="#generating_a_new_sssh_key">generated a new SSH key</a>.</p>
           <p>
-            If you have GitHub Desktop installed, you can use it to clone repositories and not deal with SSH keys. It also comes with
-            the Git Bash tool, which is the preferred way of running <code>git</code> commands on Windows.
+            If you have <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> installed, you can use it
+            to clone repositories and not deal with SSH keys. It also comes with the Git Bash tool, which is the preferred
+            way of running <code>git</code> commands on Windows.
           </p>
           <ol>
             <li>
@@ -183,9 +191,9 @@
                 </li>
               </ul>
               <pre>
-                  <span># start the ssh-agent in the background</span>
-                  <span>$ eval $(ssh-agent -s)</span>
-                  <span>pid 59566</span>
+                  <span class="comment"># start the ssh-agent in the background</span>
+                  <span class="command">$ eval $(ssh-agent -s)</span>
+                  <span class="output">pid 59566</span>
               </pre>
             </li>
             <li>
@@ -193,11 +201,11 @@
                 adding an existing key that has a different name, replace id_rsa in the command with the name of your private
                 key file.</p>
               <pre>
-                  <span>$ ssh-add ~/.ssh/id_rsa</span>
+                  <span class="command">$ ssh-add ~/.ssh/id_rsa</span>
               </pre>
             </li>
             <li>
-              <a href="#">Add the SSH key to your GitHub account.</a>
+              <a href="#adding_a_new_ssh_key_to_your_github_account">Add the SSH key to your GitHub account.</a>
             </li>
           </ol>
         </article>
@@ -211,20 +219,24 @@
           <p>Before adding a new SSH key to your GitHub account, you should have:</p>
           <ul>
             <li>
-              <a href="#">Checked for existing SSH keys</a>
+              <a href="#checking_for_existing_ssh_keys">Checked for existing SSH keys</a>
             </li>
             <li>
-              <a href="#">Generated a new SSH key and added it to the ssh-agent</a>
+              <a href="#generating_a_new_ssh_key_and_adding_it_to_the_ssh-agent">Generated a new SSH key and added it to
+                the ssh-agent</a>
             </li>
           </ul>
           <p>
             After adding a new SSH key to your GitHub account, you can reconfigure any local repositories to use SSH. For more information,
-            see "<a href="#">Switching remote URLs from HTTPS to SSH</a>."
+            see "<a href="https://help.github.com/articles/changing-a-remote-s-url/#switching-remote-urls-from-https-to-ssh">Switching
+              remote URLs from HTTPS to SSH</a>."
           </p>
           <div class="note">
-            <strong>Note:</strong> DSA keys were deprecated in OpenSSH 7.0. If your operating system uses OpenSSH, you'll
-            need to use an alternate type of key when setting up SSH, such as an RSA key. For instance, if your operating
-            system is MacOS Sierra, you can set up SSH using an RSA key
+            <p>
+              <strong>Note:</strong> DSA keys were deprecated in OpenSSH 7.0. If your operating system uses OpenSSH, you'll
+              need to use an alternate type of key when setting up SSH, such as an RSA key. For instance, if your operating
+              system is MacOS Sierra, you can set up SSH using an RSA key.
+            </p>
           </div>
           <ol>
             <li>
@@ -232,16 +244,18 @@
               <p>If your SSH key file has a different name than the example code, modify the filename to match your current
                 setup. When copying your key, don't add any newlines or whitespace.</p>
               <pre>
-                    <span>$ clip < ~/.ssh/id_rsa.pub</span>
-                    <span># Copies the contents of the id_rsa.pub file to your clipboard</span>
+                    <span class="command">$ clip &lt; ~/.ssh/id_rsa.pub</span>
+                    <span class="comment"># Copies the contents of the id_rsa.pub file to your clipboard</span>
                 </pre>
               <div class="tip">
-                <strong>Tip:</strong> If clip isn't working, you can locate the hidden .ssh folder, open the file in your
-                favorite text editor, and copy it to your clipboard.
+                <p>
+                  <strong>Tip:</strong> If clip isn't working, you can locate the hidden .ssh folder, open the file in your
+                  favorite text editor, and copy it to your clipboard.
+                </p>
               </div>
             </li>
             <li>
-              <p>In the upper-right corner of any page, click your profile photo, then click <strong>Settings</strong>.
+              <p><span>In the upper-right corner of any page, click your profile photo, then click <strong>Settings</strong>.</span>
                 <img src="https://raw.githubusercontent.com/hphl/freecodecamp/master/technical/images/userbar-account-settings.png"></p>
             </li>
             <li>
@@ -273,18 +287,20 @@
           <p>Before testing your SSH connection, you should have:</p>
           <ul>
             <li>
-              <a href="#">Checked for existing SSH keys</a>
+              <a href="#checking_for_existing_ssh_keys">Checked for existing SSH keys</a>
             </li>
             <li>
-              <a href="#">Generated a new SSH key</a>
+              <a href="#generating_a_new_ssh_key_and_adding_it_to_the_ssh-agent">Generated a new SSH key</a>
             </li>
             <li>
-              <a href="#">Added a new SSH key to your GitHub account</a>
+              <a href="#adding_a_new_ssh_key_to_your_github_account">Added a new SSH key to your GitHub account</a>
             </li>
           </ul>
-          <p>When you test your connection, you'll need to authenticate this action using your password, which is the SSH
-            key passphrase you created earlier. For more information on working with SSH key passphrases, see <a href="#">"Working
-              with SSH key passphrases"</a>.</p>
+          <p>
+            When you test your connection, you'll need to authenticate this action using your password, which is the SSH key passphrase
+            you created earlier. For more information on working with SSH key passphrases, see <a href="#working_with_ssh_key_passphrases">"Working
+              with SSH key passphrases"</a>.
+          </p>
           <ol>
             <li>
               <p>Open Git Bash.</p>
@@ -292,18 +308,18 @@
             <li>
               <p>Enter the following:</p>
               <pre>
-                  <span>$ ssh -T git@github.com</span>
-                  <span># Attempts to ssh to GitHub</span>
+                  <span class="command">$ ssh -T git@github.com</span>
+                  <span class="comment"># Attempts to ssh to GitHub</span>
               </pre>
               <p>You may see a warning like this:</p>
               <pre>
-                  <span>The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+                  <span class="output">The authenticity of host 'github.com (IP ADDRESS)' can't be established.
                   RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
                   Are you sure you want to continue connecting (yes/no)?</span>
               </pre>
               <p>or like this:</p>
               <pre>
-                <span>The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+                <span class="output">The authenticity of host 'github.com (IP ADDRESS)' can't be established.
                     RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
                     Are you sure you want to continue connecting (yes/no)?</span>
               </pre>
@@ -311,14 +327,16 @@
             <li>
               <p>Verify that the fingerprint in the message you see matches one of the messages in step 2, then type <code>yes</code>:</p>
               <pre>
-              <span>Hi username! You've successfully authenticated, but GitHub does not
+              <span class="output">Hi <em>username</em>! You've successfully authenticated, but GitHub does not
                   provide shell access.</span>
             </pre>
             </li>
             <li>
-              <p>Verify that the resulting message contains your username. If you receive a "permission denied" message,
-                see <a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank">"Error:
-                  Permission denied (publickey)"</a>.</p>
+              <p>
+                Verify that the resulting message contains your username. If you receive a "permission denied" message, see <a
+                  href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank">"Error: Permission
+                  denied (publickey)"</a>.
+              </p>
             </li>
           </ol>
         </article>
@@ -336,76 +354,85 @@
             command:
           </p>
           <pre>
-              <span>$ ssh-keygen -p</span>
-              <span># Start the SSH key creation process</span>
-              <span>Enter file in which the key is (/Users/you/.ssh/id_rsa): [Hit enter]</span>
-              <span>Key has comment '/Users/you/.ssh/id_rsa'</span>
-              <span>Enter new passphrase (empty for no passphrase): [Type new passphrase]</span>
-              <span>Enter same passphrase again: [One more time for luck]</span>
-              <span>Your identification has been saved with the new passphrase.</span>
+              <span class="command">$ ssh-keygen -p</span>
+              <span class="comment"># Start the SSH key creation process</span>
+              <span class="output">Enter file in which the key is (/Users/<em>you</em>/.ssh/id_rsa): <em>[Hit enter]</em></span>
+              <span class="output">Key has comment '/Users/<em>you</em>/.ssh/id_rsa'</span>
+              <span class="output">Enter new passphrase (empty for no passphrase): <em>[Type new passphrase]</em></span>
+              <span class="output">Enter same passphrase again: <em>[One more time for luck]</em></span>
+              <span class="output">Your identification has been saved with the new passphrase.</span>
           </pre>
-          <p>If your key already has a passphrase, you will be prompted to enter it before you can change to a new passphrase</p>
+          <p>If your key already has a passphrase, you will be prompted to enter it before you can change to a new passphrase.</p>
           <h3>Auto-launching <code>ssh-agent</code> on Git for Windows</h3>
-          <p>If you're using Git Shell that's installed with GitHub Desktop, you don't need to follow these steps. GitHub
-            Desktop automatically launches <code>ssh-agent</code> for you.</p>
-          <p>Otherwise, follow these steps to run ssh-agent automatically when you open bash or Git shell. Copy the following
-            lines and paste them into your <code>~/.profile</code> or <code>~/.bashrc</code> file in Git shell:</p>
-          <pre>
-              <code>
-                  env=~/.ssh/agent.env
+          <p>
+            If you're using Git Shell that's installed with GitHub Desktop, you don't need to follow these steps. GitHub Desktop automatically
+            launches <code>ssh-agent</code> for you.
+          </p>
+          <p>
+            Otherwise, follow these steps to run ssh-agent automatically when you open bash or Git shell. Copy the following lines and
+            paste them into your <code>~/.profile</code> or <code>~/.bashrc</code> file in Git shell:
+          </p>
+          <pre class="bash">
+<code>env=~/.ssh/agent.env
 
-                  agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+agent_load_env () { test -f "$env" &amp;&amp; . "$env" &gt;| /dev/null ; }
                   
-                  agent_start () {
-                      (umask 077; ssh-agent >| "$env")
-                      . "$env" >| /dev/null ; }
+agent_start () {
+    (umask 077; ssh-agent &gt;| "$env")
+    . "$env" &gt;| /dev/null ; }
                   
-                  agent_load_env
+agent_load_env
                   
-                  # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
-                  agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-                  
-                  if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-                      agent_start
-                      ssh-add
-                  elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-                      ssh-add
-                  fi
-                  
-                  unset env
-              </code>
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l &gt;| /dev/null 2&gt;&amp;1; echo $?)
+                
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add
+elif [ "$SSH_AUTH_SOCK" ] &amp;&amp; [ $agent_run_state = 1 ]; then
+    ssh-add
+fi
+                 
+unset env</code>
             </pre>
           <p>
             If your private key is not stored in one of the default locations (~/.ssh/id_rsa or ~/.ssh/id_dsa), you'll need to tell your
             SSH authentication agent where to find it. To add your key to ssh-agent, type ssh-add ~/path/to/my_key. For more
-            information, see "<a href="#">Generating a new SSH key and adding it to the ssh-agent</a>"
+            information, see "<a href="#generating_a_new_ssh_key_and_adding_it_to_the_ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a>"
           </p>
           <div class="tip">
-            <strong>Tip:</strong> If you want ssh-agent to forget your key after some time, you can configure it to do so
-            by running <code>ssh-add -t <seconds></code>.
+            <p>
+              <strong>Tip:</strong> If you want ssh-agent to forget your key after some time, you can configure it to do
+              so by running <code>ssh-add -t &lt;seconds&gt;</code>.
+            </p>
           </div>
           <p>Now, when you first run Git Bash, you are prompted for your passphrase:</p>
           <pre>
-              <span>Initializing new SSH agent...</span>
-              <span>succeeded</span>
-              <span>Enter passphrase for /c/Users/you/.ssh/id_rsa:</span>
-              <span>Identity added: /c/Users/you/.ssh/id_rsa (/c/Users/you/.ssh/id_rsa)</span>
-              <span>Welcome to Git (version 1.6.0.2-preview20080923)</span>
-              <span>></span>
-              <span>Run 'git help git' to display the help index.</span>
-              <span>Run 'git help ' to display help for specific commands.</span>
+              <span class="output">Initializing new SSH agent...</span>
+              <span class="output">succeeded</span>
+              <span class="output">Enter passphrase for /c/Users/you/.ssh/id_rsa:</span>
+              <span class="output">Identity added: /c/Users/you/.ssh/id_rsa (/c/Users/you/.ssh/id_rsa)</span>
+              <span class="output">Welcome to Git (version 1.6.0.2-preview20080923)</span>
+              <span class="command">&gt;</span>
+              <span class="output">Run 'git help git' to display the help index.</span>
+              <span class="output">Run 'git help ' to display help for specific commands.</span>
           </pre>
           <p>The <code>ssh-agent</code> process will continue to run until you log out, shut down your computer, or kill
             the process.</p>
         </article>
       </section>
+      <section id="reference" class="main-section">
+        <header>
+          Reference
+        </header>
+        <article>
+          <p>
+            All documentation is this page is from <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">GitHub Help</a>
+          </p>
+        </article>
+      </section>
     </div>
-  </main>
-  <footer id="footer">
-    <h5 class="center-text">
-      <i class="glyphicon glyphicon-copyright-mark"></i>Copyright 2018, Hans Hamel. All Rights Reserved.
-    </h5>
-  </footer>
+  </main> 
 </body>
 <script src="javascript.js"></script>
 <!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
