@@ -174,17 +174,15 @@ header{
 }
 
 #main-doc pre{
-  background-color: #000;
+  background: -webkit-linear-gradient(#000, #000,#000, #000,#648880);
+  background: -moz-linear-gradient(#000, #000,#000, #000,#648880);
+  background: linear-gradient(#000, #000,#000, #000,#496266);
   border: 2px solid #ddd;
   margin: 10px 0px;
   white-space: nowrap;
   padding: 10px;
   border-radius: 3px;
   line-height: 21px;
-}
-
-#main-doc pre:hover{
-  background-color: #635c5c;
 }
 
 #main-doc pre span{
@@ -210,7 +208,7 @@ header{
 }
 
 #main-doc .bash{
-  background-color: transparent;
+  background: transparent;
   white-space: pre;
   margin-bottom: 0px;
   padding-bottom: 0px;

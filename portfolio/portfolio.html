@@ -1,240 +1,155 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="javascript.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Portfolio</title>
 </head>
+
 <body>
   <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="navbar">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#right-navbar-collapse" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="mailto:hp_hamel@hotmail.com">
-            <img src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/logo.png">
-          </a>
-        </div>
-        <div class="collapse navbar-collapse" id="right-navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+        <a class="navbar-brand" href="mailto:hp_hamel@hotmail.com">
+          <img src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/logo.png">
+        </a>
+        <ul>
+          <li><a href="#welcome-section">About</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
     </nav>
   </header>
   <main>
-    <section id="about" class="grl-section">
-      <div class="container smaller-container flexbox flexbox-justify-center flexbox-column flexbox-align-center full-height">
-        <h1 class="section-title">About Me</h1>
-        <div class="divider fourty-porcent-width center-block"></div>
-        <div class="flexbox flexbox-align-center flexbox-row-reverse">
-        <div class="personal-img">
-          <img class="img-responsive round-img" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/smaller_picture.jpg" alt="Hans Hamel">
-        </div>
-        <div class="brief-description">
-          <h3 class="no-margin">My name is Hans Hamel, I am a Systems Engineer.</h3>
-          <h3>I have experience in web development with specialty in WordPress, including exclusive themes,
-            and very adaptable plugins using HTML5, CSS3, JQuery and PHP.
-          </h3>
-          <h3 class="hidden-xs">Now looking to become a Front End Developer.</h3>
-          <div class="divider ninety-porcent-width"></div>
-          <h2>
-            Web Developer - Front End Developer
-          </h2>
-        </div>
-      </div>
-      </div>
+    <section id="welcome-section">
+      <h1>Front End Developer</h1>
+      <img src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/smaller_picture.jpg" alt="Hans Hamel">
+      <p class="no-margin">My name is Hans Hamel, I am a Systems Engineer.</p>
+      <p>I have experience working with WordPress.</p>
+      <p>Now looking to become a Front End Developer.</p>
     </section>
-    <section id="portfolio" class="text-center grl-section">
-      <div class="container flexbox flexbox-justify-center flexbox-column full-height">
-        <h1 class="section-title">
-          Portfolio
+    <section id="projects">
+      <div class="container">
+        <h1>
+          Some Projects
         </h1>
-        <div class="divider fourty-porcent-width center-block"></div>
-        <!--<div id="carousel-portfolio" class="carousel slide" data-ride="carousel" data-interval="false">-->
-        <div id="carousel-portfolio" class="carousel" data-ride="carouse">
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <div class="image-container center-block">
-                <a href="http://besthiking.com.au/"target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/tents.jpg" alt="best hiking tents">
-                </a>
+        <div class="list-projects">
+          <div class="project-tile">
+            <a class="project-link" href="http://wallstreetfineart.gallery/" target="_blank"></a>
+              <div class="iframe-container">
+                <iframe scrolling="no" src="http://wallstreetfineart.gallery/">
+                </iframe>
               </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="http://comparardrones.com/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/drones.png" alt="compare drones">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="https://s.codepen.io/Xeus/debug/LzemXa/yPAJjGZQBdqA" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/tribute.png" alt="tribute page">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="http://wallstreetfineart.gallery/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/wall%20street%20fine%20art.jpg" alt="wall street fine art">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="http://www.manhattanpacificrealty.com/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/manhattan%20Pacific%20Realty.jpg" alt="manhattan pacific realty">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="https://www.planningpoker.com/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/planning%20poker.png" alt="planing poker">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="https://checksandspots.com/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/checks%20and%20spots.jpg" alt="checks and spots">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="https://www.milkwood.net/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/milkwood.jpg" alt="milkwood">
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="image-container center-block">
-                <a href="https://mattandlizraad.com/" target="_blank">
-                  <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/Matt%20and%20Liz%20Raad.jpg" alt="matt and liz raad">
-                </a>
-              </div>
-            </div>
+              <p class="project-title">wall street fine art</p>
           </div>
-          <a class="left carousel-control" href="#carousel-portfolio" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-portfolio" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-portfolio" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="1"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="2"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="3"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="4"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="5"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="6"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="7"></li>
-            <li data-target="#carousel-portfolio" data-slide-to="8"></li>
-          </ol>
+          <div class="project-tile">
+            <a href="http://wallstreetfineart.gallery/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/wall%20street%20fine%20art.jpg"
+                  alt="wall street fine art">
+              </div>
+              <p class="project-title">wall street fine art</p>
+            </a>
+          </div>
+          <div class="project-tile">
+            <a href="http://www.manhattanpacificrealty.com/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/manhattan%20Pacific%20Realty.jpg"
+                  alt="manhattan pacific realty">
+              </div>
+              <p class="project-title">manhattan pacific realty</p>
+            </a>
+          </div>
+          <div class="project-tile">
+            <a href="https://www.planningpoker.com/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/planning%20poker.png"
+                  alt="planing poker">
+              </div>
+              <p class="project-title">Planning poker</p>
+            </a>
+          </div>
+          <div class="project-tile">
+            <a href="https://checksandspots.com/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/checks%20and%20spots.jpg"
+                  alt="checks and spots">
+              </div>
+              <div class="project-title">Checks and spots</div>
+            </a>
+          </div>
+          <div class="project-tile">
+            <a href="https://www.milkwood.net/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/milkwood.jpg"
+                  alt="milkwood" />
+              </div>
+              <div class="project-title">Milkwood</div>
+            </a>
+          </div>
+          <div class="project-tile">
+            <a href="https://mattandlizraad.com/" target="_blank">
+              <div class="image-container">
+                <img class="img-responsive" src="https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/Matt%20and%20Liz%20Raad.jpg"
+                  alt="matt and liz raad">
+              </div>
+              <div class="project-title">Matt and liz raad</div>
+            </a>
+          </div>
+        </div>
+        <div class="load-more">
+          <button>Load More</button>
         </div>
       </div>
     </section>
-    <section id="contact" class="grl-section">
-      <div class="container full-height">
-        <div class="flexbox flexbox-align-center flexbox-justify-center flexbox-column full-height">
-          <h1 class="section-title">Contact Me</h1>
-          <div class="divider fourty-porcent-width center-block"></div>
-          <!--<div class="row icons-container">
-          <div class="col-md-2 col-sm-4 col-xs-6">
-          <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://www.facebook.com/hans.hamel.leigue" target="_blank">
-          <i class="fa fa-facebook fa-5x" aria-hidden="true"></i>
-        </a>
+    <section id="contact">
+      <div class="container">
+        <h1 class="section-title">Contact Me</h1>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/hans.hamel.leigue" target="_blank">
+              <i class="fab fa-facebook-f fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Hamel1989" target="_blank">
+              <i class="fab fa-twitter fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/u/0/116982088491735744021" target="_blank">
+              <i class="fab fa-google-plus-g fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hans-hamel-59300b89/" target="_blank">
+              <i class="fab fa-linkedin-in fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hp_hamel@hotmail.com" target="_blank">
+              <i class="fas fa-envelope fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a id="profile-link" href="https://github.com/hphl" target="_blank">
+              <i class="fab fa-github-alt fa-3x" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-6">
-      <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://twitter.com/Hamel1989" target="_blank">
-      <i class="fa fa-twitter fa-5x" aria-hidden="true"></i>
-    </a>
-  </div>
-  <div class="col-md-2 col-sm-4 col-xs-6">
-  <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://plus.google.com/u/0/116982088491735744021" target="_blank">
-  <i class="fa fa-google-plus fa-5x" aria-hidden="true"></i>
-</a>
-</div>
-<div class="col-md-2 col-sm-4 col-xs-6">
-<a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://www.linkedin.com/in/hans-hamel-59300b89/" target="_blank">
-<i class="fa fa-linkedin fa-5x" aria-hidden="true"></i>
-</a>
-</div>
-<div class="col-md-2 col-sm-4 col-xs-6">
-<a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="mailto:hp_hamel@hotmail.com" target="_blank">
-<i class="fa fa-envelope fa-5x" aria-hidden="true"></i>
-</a>
-</div>
-<div class="col-md-2 col-sm-4 col-xs-6">
-<a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://github.com/hphl" target="_blank">
-<i class="fa fa-github-alt fa-5x" aria-hidden="true"></i>
-</a>
-</div>
-</div>-->
-<ul class="icons-container list-unstyled list-inline text-center">
-  <li class="center-block">
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://www.facebook.com/hans.hamel.leigue" target="_blank">
-      <i class="fa fa-facebook fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li class="center-block">
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://twitter.com/Hamel1989" target="_blank">
-      <i class="fa fa-twitter fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://plus.google.com/u/0/116982088491735744021" target="_blank">
-      <i class="fa fa-google-plus fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://www.linkedin.com/in/hans-hamel-59300b89/" target="_blank">
-      <i class="fa fa-linkedin fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="mailto:hp_hamel@hotmail.com" target="_blank">
-      <i class="fa fa-envelope fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="center-block flexbox flexbox-align-center flexbox-justify-center" href="https://github.com/hphl" target="_blank">
-      <i class="fa fa-github-alt fa-5x" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-</div>
-</div>
-</section>
-</main>
-<footer id="footer">
-  <div class="text-center">
-    <h5><i class="glyphicon glyphicon-copyright-mark"></i>Copyright 2018, Hans Hamel. All Rights Reserved.</h5>
-  </div>
-</footer>
+    </section>
+  </main>
+  <footer id="footer">
+    <h5><i class="far fa-copyright"></i> Copyright 2018, Hans Hamel. All Rights Reserved.</h5>
+  </footer>
 </body>
+<script src="javascript.js"></script>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 </html>
