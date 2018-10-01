@@ -153,7 +153,8 @@ header {
 
 .responsive-video {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 53.25%;
+  margin: 0px 10px;
 }
 
 .responsive-video iframe {
