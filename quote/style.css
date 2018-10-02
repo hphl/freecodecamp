@@ -3,12 +3,20 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body{
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
+
+.quote-wrapper{
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
 #quote-box .btn{
   color: #fff;
 }
+
 a:hover,
 a:focus,
 #quote-box a.fa:hover,
@@ -18,51 +26,33 @@ a:focus,
   color: #efefef;
   opacity: 0.8;
 }
+
 #quote-box,
 #footer,
 #quote-box .quote-text .fa{
   background-color: #fff;
 }
+
 #quote-box{
   max-width: 500px;
   margin: auto;
 }
+
 .share-quote .fa-1x{
   font-size: 1.5em;
 }
+
 #footer{
   height: 50px;
   position: absolute;
   width: 100%;
   bottom: 0;
-}
-.full-height{
-  height: 100%;
-}
-.flexbox{
+  text-align: center;
   display: flex;
-}
-.flexbox-column{
-  flex-flow: column;
-}
-.flexbox-justify-center{
   justify-content: center;
-}
-.flexbox-align-center{
   align-items: center;
 }
-.flexbox-row-reverse{
-  flex-flow: row-reverse;
-}
-@media (max-width: 1199px) {
 
-}
-@media (max-width: 991px){
-
-}
-@media (max-width: 767px){
-
-}
 @media (max-width: 620px) {
   h2{
     font-size: 24px;
@@ -70,7 +60,4 @@ a:focus,
   h3{
     font-size: 18px;
   }
-}
-@media (max-width: 620px) {
-
 }

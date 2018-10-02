@@ -62,11 +62,11 @@ function SetData(data) {
   //console.log(data);
   changeColor();
   // Here you get the data to modify as you please
-  var quote = (data),
+  var quote = data[0],
       quote_text = quote.quote, //  Create the elements we need
-      author = quote.author,
-      category = quote.category;
-      //
+      author = quote.author;
+  // var category = quote.category;
+
       $('#quote-box .quote-text span').text(quote_text);
       $('#quote-box .quote-author').text('- ' + author);
       $('.twitter-share-button').attr("href", 'https://twitter.com/intent/tweet?text="' + quote_text + '" -' +author);
