@@ -9,6 +9,8 @@
 
                 if (project !== null)
                     _projectBuilder.build(project);
+                else
+                    break;
             }
         }
     }
