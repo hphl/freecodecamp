@@ -1,6 +1,12 @@
-
+[
     {
         "name": "blaname",
         "email": "bla@bla.com",
         "address": "bla106"
+    },
+    {
+        "name": "pepe",
+        "email": "pepe@hotmail.com",
+        "address": "cbba"
     }
+]

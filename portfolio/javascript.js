@@ -146,7 +146,7 @@
         }
     };
 
-    xmlhttp.open("GET", "data.json", true);
+    xmlhttp.open("GET", "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/data.json", true);
     xmlhttp.send();
 
 })();
