@@ -1,12 +1,52 @@
 [
     {
-        "name": "blaname",
-        "email": "bla@bla.com",
-        "address": "bla106"
+        "name": "twitch tv",
+        "url": "https://codepen.io/Xeus/pen/jZEpGe",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/twitch_tv.png"
     },
     {
-        "name": "pepe",
-        "email": "pepe@hotmail.com",
-        "address": "cbba"
+        "name": "wikipedia viewer",
+        "url": "https://codepen.io/Xeus/pen/ddyRNv",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/wikipedia_viewer.png"
+    },
+    {
+        "name": "local weather",
+        "url": "https://codepen.io/Xeus/pen/yvLXar",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/local_weather.png"
+    },
+    {
+        "name": "quote machine",
+        "url": "https://codepen.io/Xeus/pen/opVGrm",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/quote_machine.png"
+    },
+    {
+        "name": "technical documentation",
+        "url": "https://codepen.io/Xeus/pen/BOLvda",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/technical_documentation_page.png"
+    },
+    {
+        "name": "product landing page",
+        "url": "https://codepen.io/Xeus/pen/YjdwoO",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/product_landing_page.png"
+    },
+    {
+        "name": "tribute page",
+        "url": "https://codepen.io/Xeus/pen/LzemXa",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/tribute_page.png"
+    },
+    {
+        "name": "pomodoro clock",
+        "url": "https://codepen.io/Xeus/pen/gzMyOq",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/pomodoro_clock.png"
+    },
+    {
+        "name": "calculator",
+        "url": "https://codepen.io/Xeus/pen/yKovvK",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/calculator.png"
+    },
+    {
+        "name": "survey form",
+        "url": "https://codepen.io/Xeus/pen/BPPBKw",
+        "image": "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/survey_form.png"
     }
 ]

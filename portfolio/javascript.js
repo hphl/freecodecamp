@@ -79,49 +79,22 @@
 
     function FactoryProjectSelector() {
         this.create = function () {
-            var _projectSelector = new ProjectSelector();
-            var _projectTwitch = new Project("twitch tv",
-                "https://codepen.io/Xeus/pen/jZEpGe",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/twitch_tv.png");
-            var _projectWiki = new Project("wikipedia viewer",
-                "https://codepen.io/Xeus/pen/ddyRNv",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/wikipedia_viewer.png");
-            var _projectWeather = new Project("local weather",
-                "https://codepen.io/Xeus/pen/yvLXar",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/local_weather.png");
-            var _projectQuote = new Project("quote machine",
-                "https://codepen.io/Xeus/pen/opVGrm",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/quote_machine.png");
-            var _projectTechnical = new Project("technical documentation",
-                "https://codepen.io/Xeus/pen/BOLvda",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/technical_documentation_page.png");
-            var _projectProduct = new Project("product landing page",
-                "https://codepen.io/Xeus/pen/YjdwoO",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/product_landing_page.png");
-            var _projectTribute = new Project("tribute page",
-                "https://codepen.io/Xeus/pen/LzemXa",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/tribute_page.png");
-            var _projectPomodoro = new Project("pomodoro clock",
-                "https://codepen.io/Xeus/pen/gzMyOq",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/pomodoro_clock.png");
-            var _projectCalculator = new Project("calculator",
-                "https://codepen.io/Xeus/pen/yKovvK",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/calculator.png");
-            var _projectSurvey = new Project("survey form",
-                "https://codepen.io/Xeus/pen/BPPBKw",
-                "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/images/survey_form.png");
-            _projectSelector.addProject(_projectTwitch);
-            _projectSelector.addProject(_projectWiki);
-            _projectSelector.addProject(_projectWeather);
-            _projectSelector.addProject(_projectQuote);
-            _projectSelector.addProject(_projectTechnical);
-            _projectSelector.addProject(_projectProduct);
-            _projectSelector.addProject(_projectTribute);
-            _projectSelector.addProject(_projectPomodoro);
-            _projectSelector.addProject(_projectCalculator);
-            _projectSelector.addProject(_projectSurvey);
+            var request = new HttpRequester();
 
-            return _projectSelector;
+            return request.request(parseResponse, "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/data.json");
+        }
+        var parseResponse = function (response) {
+            var responseObj = JSON.parse(response);
+
+            if (Array.isArray(responseObj)) {
+                var projectSelector = new ProjectSelector();
+
+                for (let index = 0; index < responseObj.length; index++) {
+                    projectSelector.addProject(responseObj[index]);
+                }
+
+                return projectSelector;
+            }
         }
     }
 
@@ -137,16 +110,17 @@
         });
     }
 
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            console.log("Json parsed data is: " + JSON.stringify(myObj));
+    function HttpRequester() {
+        this.request = function (callback, url) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.overrideMimeType("application/json");
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
         }
-    };
-
-    xmlhttp.open("GET", "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/data.json", true);
-    xmlhttp.send();
-
+    }
 })();
