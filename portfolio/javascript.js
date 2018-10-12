@@ -3,8 +3,8 @@
         var _projectBuilder = new ProjectBuilder(container);
         var _factoryProjectSelector = new FactoryProjectSelector();
         var _projectSelector = _factoryProjectSelector.create();
-        this.loadProjects = function () {
-            for (let index = 1; index <= 3; index++) {
+        this.loadProjects = function (totalProjects) {
+            for (let index = 1; index <= totalProjects; index++) {
                 let project = _projectSelector.getProject();
 
                 if (project !== null)
@@ -15,50 +15,33 @@
         }
     }
 
-    function Project(name, url, image) {
-        var _name = name;
-        var _url = url;
-        var _image = image;
-        this.getName = function () {
-            return _name;
-        }
-        this.getUrl = function () {
-            return _url;
-        }
-        this.getImage = function () {
-            return _image;
-        }
-    }
-
     function ProjectBuilder(container) {
         var _container = container;
         this.build = function (project) {
-            var divProject = document.createElement('div');
-            divProject.classList.add('project-tile');
-            var projectUrl = document.createElement('a');
-            projectUrl.href = project.getUrl();
-            projectUrl.target = '_blank';
-            var divImageContainer = document.createElement('div');
-            divImageContainer.classList.add('image-container');
-            var projectImage = document.createElement('img');
-            projectImage.classList.add('img-responsive');
-            projectImage.src = project.getImage();
-            projectImage.alt = project.getName();
-            var divProjectTitle = document.createElement('div');
-            divProjectTitle.classList.add('project-title');
-            var projectTitle = document.createTextNode(project.getName());
-            divProjectTitle.appendChild(projectTitle);
+            var projectTile = createTag('div', { className: 'project-tile' });
+            var projectUrl = createTag('a', { href: project['url'], target: '_blank' });
+            var imageContainer = createTag('div', { className: 'image-container' });
+            var projectImage = createTag('img', { className: 'img-responsive', src: project['image'], alt: project['name'] });
+            var projectTitle = createTag('div', { className: 'project-title' });
 
-            divImageContainer.appendChild(projectImage);
-
-            projectUrl.appendChild(divImageContainer);
-            projectUrl.appendChild(divProjectTitle);
-
-            divProject.appendChild(projectUrl);
-
-            _container.appendChild(divProject);
+            projectTitle.appendChild(document.createTextNode(project['name']));
+            imageContainer.appendChild(projectImage);
+            projectUrl.appendChild(imageContainer);
+            projectUrl.appendChild(projectTitle);
+            projectTile.appendChild(projectUrl);
+            _container.appendChild(projectTile);
         }
+        var createTag = function (tag, props) {
+            var newElement = document.createElement(tag);
 
+            if (props != undefined) {
+                Object.keys(props).forEach(function (key) {
+                    newElement[key] = props[key];
+                });
+            }
+
+            return newElement;
+        }
     }
 
     function ProjectSelector() {
@@ -70,6 +53,7 @@
         this.getProject = function () {
             if (_index < _listProjects.length) {
                 _index++;
+
                 return _listProjects[_index - 1];
             }
 
@@ -78,23 +62,38 @@
     }
 
     function FactoryProjectSelector() {
+        var _projectSelector;
         this.create = function () {
+            _projectSelector = new ProjectSelector();
             var request = new HttpRequester();
+            request.request(parseResponse, "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/data.json");
 
-            return request.request(parseResponse, "https://raw.githubusercontent.com/hphl/freecodecamp/master/portfolio/data.json");
+            return _projectSelector;
         }
         var parseResponse = function (response) {
             var responseObj = JSON.parse(response);
 
             if (Array.isArray(responseObj)) {
-                var projectSelector = new ProjectSelector();
-
                 for (let index = 0; index < responseObj.length; index++) {
-                    projectSelector.addProject(responseObj[index]);
+                    _projectSelector.addProject(responseObj[index]);
                 }
-
-                return projectSelector;
             }
+        }
+    }
+
+    function HttpRequester() {
+        this.request = function (callback, url) {
+            if (window.XMLHttpRequest)
+                xmlhttp = new XMLHttpRequest();
+            else
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp.overrideMimeType("application/json");
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    callback(xmlhttp.responseText);
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
         }
     }
 
@@ -106,21 +105,8 @@
 
     if (loadMoreBtn.length > 0) {
         loadMoreBtn[0].addEventListener("click", function (event) {
-            projectManager.loadProjects();
+            projectManager.loadProjects(3);
         });
     }
 
-    function HttpRequester() {
-        this.request = function (callback, url) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.overrideMimeType("application/json");
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    callback(this.responseText);
-                }
-            };
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-        }
-    }
 })();
