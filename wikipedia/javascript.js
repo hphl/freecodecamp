@@ -74,11 +74,9 @@ function searchWiki(continue_sroffset){
 }
 
 function showResults(data) {
-  console.log(data);
   var result_title,
       result_content,
       result_url;
-      console.log(parseInt($('.total-results').text()) + data.query.search.length);
   $('.total-results').text(parseInt($('.total-results').text()) + data.query.search.length);
   data.query.search.forEach(function(item){
       //console.log(item);
