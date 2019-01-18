@@ -1,5 +1,57 @@
-$color: red;
+@import "utils";
 
-body{
-    background-color: $color !important;
+body {
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: all .8s;
+}
+
+.quote-wrapper {
+    display: flex;
+    height: 100vh;
+}
+ 
+#quote-box .btn {
+    color: #fff;
+}
+
+a:hover,
+a:focus,
+#quote-box a.fa:hover,
+#quote-box a.fa:focus,
+.btn:focus,
+.btn:hover{
+    color: #efefef;
+    opacity: 0.8;
+}
+ 
+#quote-box,
+#quote-text .fa {
+    background-color: #fff;
+}
+ 
+#quote-box {
+    max-width: 500px;
+    margin: auto;
+}
+
+#tweet-quote {
+    font-size: 1.5em;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+@media (max-width: 620px) {
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 18px;
+    }
 }

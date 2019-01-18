@@ -1,5 +1,137 @@
 body {
-  background-color: red !important;
+  color: #16A085;
+}
+
+body,
+#tweet-quote,
+#new-quote {
+  background-color: #16A085;
+}
+
+h3,
+h4 {
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.jumbotron {
+  padding: 30px 15px;
+  border-radius: 6px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  .jumbotron {
+    padding: 48px 60px;
+  }
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.8s;
+}
+
+.quote-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+#quote-box .btn {
+  color: #fff;
+}
+
+a:hover,
+a:focus,
+#quote-box a.fa:hover,
+#quote-box a.fa:focus,
+.btn:focus,
+.btn:hover {
+  color: #efefef;
+  opacity: 0.8;
+}
+
+#quote-box,
+#quote-text .fa {
+  background-color: #fff;
+}
+
+#quote-box {
+  max-width: 500px;
+  margin: auto;
+}
+
+#tweet-quote {
+  font-size: 1.5em;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 620px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,82 @@
+$defaultColor: #16A085;
+
+body {
+    color: $defaultColor;
+}
+
+body,
+#tweet-quote,
+#new-quote {
+    background-color: $defaultColor;
+}
+
+h3,
+h4{
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.pull-left {
+    float: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.jumbotron {
+    padding: 30px 15px;
+    border-radius: 6px;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+    .jumbotron{
+        padding: 48px 60px;
+    }
+}
