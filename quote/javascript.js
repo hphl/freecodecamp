@@ -10,8 +10,9 @@
 
   HttpRequester.prototype.request = function httpRequesterRequest(callback, url, header) {
     this.xmlhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200)
+      if (this.readyState == 4 && this.status == 200) {
         callback(this.responseText);
+      }
     };
     this.xmlhttp.open("GET", url, true);
     this.setHeader(header);
@@ -24,6 +25,7 @@
     for (const key in header) {
       this.xmlhttp.setRequestHeader(key, header[key]);
     }
+
   };
 
   function ColorChanger() { }
